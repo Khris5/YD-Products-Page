@@ -3,16 +3,13 @@ import "../assets/styles/MainSection.css";
 import Navbar from "../components/navbar/navbar.jsx";
 import ProductHeader from "../components/ProductHeader/ProductHeader.jsx";
 import Footer from "../components/footer/footer.jsx";
-import { Link, Route, Routes, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Card from "../components/Card/Card.jsx";
 
 function Terms() {
   const [cards, setCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-
-  const location = useLocation();
-  console.log(location);
 
   useEffect(() => {
     const jsonData = async () => {
@@ -38,42 +35,7 @@ function Terms() {
       </div>
     );
   }
-  const Cards = ({ slug, nameOfService, promoText, termsCondition }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-    function handleToggle() {
-      setIsExpanded((prev) => (prev = !prev));
-    }
 
-    function ViewMore() {
-      if (promoText.length > 150) {
-        return (
-          <span className="moreContent" onClick={() => handleToggle()}>
-            {isExpanded ? `View Less` : `View More`}
-          </span>
-        );
-      }
-    }
-    const dots = promoText.length > 150 ? `...` : ``;
-    return (
-      <div className="card" id={slug} key={slug}>
-        <div className="cardContent">
-          <p className="cardHeader">
-            <a
-              href={termsCondition ? termsCondition : `#`}
-              className="cardLink"
-              target="_blank"
-            >
-              {nameOfService}
-            </a>
-          </p>
-          <p className="cardText">
-            {isExpanded ? promoText : `${promoText.slice(0, 150) + dots}`}
-          </p>
-          <ViewMore />
-        </div>
-      </div>
-    );
-  };
 
   return (
     <div className="allContent">
@@ -85,7 +47,7 @@ function Terms() {
       <div className="mainSection">
         <div className="ydProducts">
           {cards.map((item) => {
-            return <Cards {...item} key={item.slug} />;
+            return <Card {...item} key={item.slug} title={item.nameOfService} promoText={item.promoText} titleLink={item.termsCondition} id={item.slug} />;
           })}
         </div>
       </div>

@@ -2,6 +2,7 @@ import "../../assets/styles/navbar.css";
 import Logo from "../../../public/images/yellowdot1.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { FaBars, FaXmark } from "react-icons/fa6";
 
 const HeaderContent = ({ className }) => {
   return (
@@ -19,7 +20,7 @@ const HeaderContent = ({ className }) => {
           to="/terms"
           className={({ isActive }) => (isActive ? "active" : undefined)}
         >
-          Terms&Conditions
+          Terms and Conditions
         </NavLink>
       </li>
       <li>
@@ -50,9 +51,9 @@ function Navbar() {
 
         <div className="hamburger" onClick={() => handleToggle()}>
           {dropdown ? (
-            <i className="fa-solid fa-xmark"></i>
+            <FaXmark />
           ) : (
-            <i className="fa-solid fa-bars"></i>
+            <FaBars />
           )}
         </div>
       </div>

@@ -1,9 +1,8 @@
 import "../App.css";
 import Navbar from "../components/navbar/navbar.jsx";
 import ProductHeader from "../components/ProductHeader/ProductHeader.jsx";
-import MainSection from "../components/Cards&categories/MainSection.jsx";
+import MainSection from "../components/CardsAndCategories/MainSection.jsx";
 import Footer from "../components/footer/footer.jsx";
-import { Route, Routes } from "react-router-dom";
 function Home() {
   return (
     <>

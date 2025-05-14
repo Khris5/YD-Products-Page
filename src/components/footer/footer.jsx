@@ -1,5 +1,8 @@
 import React from "react";
 import "../../assets/styles/footer.css";
+import { FaInbox, FaEarthAmericas, FaFacebookF, FaTwitter, FaGithub, FaInstagram } from "react-icons/fa6";
+import { FaRegCopyright } from "react-icons/fa";
+
 const Footer = () => {
   return (
     <footer>
@@ -13,14 +16,14 @@ const Footer = () => {
           <div className="contacts">
             <div className="actualContacts">
               <span className="email">
-                <i className="fa-solid fa-inbox"></i> Email:
+                <FaInbox /> Email:
                 <a href="mailto:info@yellowdotafrica.com">
                   info@yellowdotafrica.com
                 </a>
               </span>
 
               <span className="website">
-                <i className="fa-solid fa-earth-americas"></i> Website:
+                <FaEarthAmericas /> Website:
                 <a
                   href="https://yellowdotafrica.com"
                   target="_blank"
@@ -36,7 +39,7 @@ const Footer = () => {
           <div className="copyright">
             <span>
               <p>
-                <i className="fa-regular fa-copyright"></i> Copyright
+                <FaRegCopyright /> Copyright
               </p>
               <span>yellowdotafrica</span>
             </span>
@@ -45,22 +48,22 @@ const Footer = () => {
             <ul>
               <li className="socialMedia">
                 <a href="">
-                  <i className="fa-brands fa-facebook"></i>
+                  <FaFacebookF />
                 </a>
               </li>
               <li className="socialMedia">
                 <a href="">
-                  <i className="fa-brands fa-twitter"></i>
+                  <FaTwitter />
                 </a>
               </li>
               <li className="socialMedia">
                 <a href="https://github.com/Yellowdot-Africa">
-                  <i className="fa-brands fa-github"></i>
+                  <FaGithub />
                 </a>
               </li>
               <li className="socialMedia">
                 <a href="">
-                  <i className="fa-brands fa-instagram"></i>
+                  <FaInstagram />
                 </a>
               </li>
             </ul>
